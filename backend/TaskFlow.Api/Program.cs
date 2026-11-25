@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using TaskFlow.Api.Infrastructure;
 using TaskFlow.Api.Infrastructure.Persistence;
+using TaskFlow.Api.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
 var app = builder.Build();
