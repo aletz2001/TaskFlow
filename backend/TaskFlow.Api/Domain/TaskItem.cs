@@ -1,9 +1,9 @@
-namespace TaskFlow.Api.Domain
+namespace TaskFlow.Api.Domain;
 
 public sealed class TaskItem
 {
-    public const int TitleMaxLenght = 100;
-    public const int DescriptionMaxLenght = 500;
+    public const int TitleMaxLength = 100;
+    public const int DescriptionMaxLength = 500;
 
     public Guid Id { get; private set; }
     public string Title { get; private set; } = string.Empty;
@@ -29,7 +29,7 @@ public sealed class TaskItem
             Status = TaskItemStatus.Pending,
             CreatedAt = now
         };
-        task.SetDeatils(title, description, priority, dueDate);
+        task.SetDetails(title, description, priority, dueDate);
         return task;
     }
 
