@@ -4,10 +4,7 @@ using TaskFlow.Api.Domain;
 
 namespace TaskFlow.Api.Endpoints;
 
-/// <summary>
-/// Convierte las excepciones conocidas en respuestas ProblemDetails con el código HTTP correcto.
-/// Las excepciones desconocidas siguen su camino y terminan en un 500 genérico, sin exponer detalles internos.
-/// </summary>
+
 internal sealed class KnownExceptionHandler(IProblemDetailsService problemDetailsService) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
@@ -21,7 +18,7 @@ internal sealed class KnownExceptionHandler(IProblemDetailsService problemDetail
         };
 
         if (status == 0)
-            return false;   // no es una excepción que conozca: que la maneje el siguiente
+            return false;  
 
         httpContext.Response.StatusCode = status;
 

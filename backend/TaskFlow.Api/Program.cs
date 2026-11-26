@@ -41,3 +41,6 @@ app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 app.MapTaskEndpoints();
 
 await app.RunAsync();
+
+
+public partial class Program { }
